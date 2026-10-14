@@ -19,9 +19,25 @@ taskForm.addEventListener("submit", function (event) {
 
   // create a new list item
   const li = document.createElement("li");
-  li.textContent = taskText;
+
+  // create a span to display the task text
+  const taskSpan = document.createElement("span");
+  taskSpan.textContent = taskText;
+
+  // create a button to delete the task
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "Delete";
+  deleteButton.type = "button";
+
+  // remove the task when the delete button is clicked
+  deleteButton.addEventListener("click", function () {
+    li.remove();
+  });
 
   // add the task to the page
+  li.appendChild(taskSpan);
+  li.appendChild(deleteButton);
+
   taskList.appendChild(li);
 
   // clear the input
