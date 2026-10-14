@@ -1,0 +1,80 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: rgb(31, 41, 55);
+  background-color: rgb(243, 244, 246);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 33px;
+}
+
+#container {
+  width: 100%;
+  max-width: 500px;
+  background-color: white;
+  padding: 33px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 30px;
+  color: rgb(17, 24, 39);
+}
+
+#taskForm {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+/* "flex: 1" tells the input to grow and occupy
+the available space inside the parent (flex container) */
+#taskInput {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 15px;
+  font-size: 15px;
+  border: 1px solid rgb(209, 213, 219);
+  border-radius: 8px;
+  outline: 2px solid transparent;
+  transition: outline-color 0.3s;
+}
+
+#taskInput:focus {
+  outline-color: black;
+}
+#taskInput::placeholder {
+  color: rgb(156, 163, 175);
+}
+
+#taskButton {
+  padding: 12px 16px;
+  background: rgb(79, 70, 229);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+#taskButton:hover {
+  background: rgb(67, 56, 202);
+}
+
+#taskButton:active {
+  transform: scale(0.97);
+}
