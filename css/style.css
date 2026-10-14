@@ -97,8 +97,27 @@ the available space inside the parent (flex container) */
   border-radius: 8px;
 }
 
+.taskContent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.taskContent input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
 #taskList li span {
   overflow-wrap: anywhere;
+}
+
+#taskList li.completed span {
+  text-decoration: line-through;
+  color: rgb(156, 163, 175);
 }
 
 #taskList li button {

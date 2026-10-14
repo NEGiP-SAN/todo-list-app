@@ -18,11 +18,27 @@ taskForm.addEventListener("submit", function (event) {
   }
 
   // create a new list item
-  const li = document.createElement("li");
+  const listItem = document.createElement("li");
 
   // create a span to display the task text
   const taskSpan = document.createElement("span");
   taskSpan.textContent = taskText;
+
+  // create a checkbox
+  const completeCheckbox = document.createElement("input");
+  completeCheckbox.type = "checkbox";
+
+  // for people who use screen readers
+  completeCheckbox.setAttribute(
+    "aria-label",
+    `Mark "${taskText}" as completed`,
+  );
+
+  // Listen for checkbox changes and add or remove the "completed" class
+  // based on whether the checkbox is checked (true) or unchecked (false)
+  completeCheckbox.addEventListener("change", function () {
+    listItem.classList.toggle("completed", completeCheckbox.checked);
+  });
 
   // create a button to delete the task
   const deleteButton = document.createElement("button");
@@ -31,14 +47,24 @@ taskForm.addEventListener("submit", function (event) {
 
   // remove the task when the delete button is clicked
   deleteButton.addEventListener("click", function () {
-    li.remove();
+    listItem.remove();
   });
 
-  // add the task to the page
-  li.appendChild(taskSpan);
-  li.appendChild(deleteButton);
+  // create a div to group the checkbox and task text together
+  const taskContent = document.createElement("div");
 
-  taskList.appendChild(li);
+  // add a CSS class to style the task content container
+  taskContent.classList.add("taskContent");
+
+  // add the checkbox and task text inside the div
+  taskContent.appendChild(completeCheckbox);
+  taskContent.appendChild(taskSpan);
+
+  // add the task to the page
+  listItem.appendChild(taskContent);
+  listItem.appendChild(deleteButton);
+
+  taskList.appendChild(listItem);
 
   // clear the input
   taskInput.value = "";
