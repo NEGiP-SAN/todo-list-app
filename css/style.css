@@ -138,3 +138,82 @@ the available space inside the parent (flex container) */
 #taskList li button:active {
   transform: scale(0.97);
 }
+
+/* Dark mode */
+body.dark-mode {
+  color: rgb(229, 231, 235);
+  background-color: rgb(17, 24, 39);
+}
+
+body.dark-mode #container {
+  background-color: rgb(31, 41, 55);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode h1 {
+  color: rgb(249, 250, 251);
+}
+
+/* Theme toggle button */
+#themeButton {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 9px 14px;
+  color: rgb(31, 41, 55);
+  background-color: rgb(229, 231, 235);
+  border: 1px solid rgb(209, 213, 219);
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    transform 0.2s;
+}
+
+#themeButton:hover {
+  background-color: rgb(209, 213, 219);
+}
+
+#themeButton:active {
+  transform: scale(0.97);
+}
+
+/* Dark mode input */
+body.dark-mode #taskInput {
+  color: rgb(243, 244, 246);
+  background-color: rgb(17, 24, 39);
+  border-color: rgb(75, 85, 99);
+}
+
+body.dark-mode #taskInput:focus {
+  outline-color: rgb(129, 140, 248);
+  border-color: rgb(129, 140, 248);
+}
+
+body.dark-mode #taskInput::placeholder {
+  color: rgb(156, 163, 175);
+}
+
+/* Dark mode task cards */
+body.dark-mode #taskList li {
+  background-color: rgb(17, 24, 39);
+  border-color: rgb(55, 65, 81);
+}
+
+body.dark-mode #taskList li.completed span {
+  color: rgb(107, 114, 128);
+}
+
+body.dark-mode .taskContent input[type="checkbox"] {
+  accent-color: rgb(129, 140, 248);
+}
+
+/* Dark mode theme button */
+body.dark-mode #themeButton {
+  color: white;
+  background-color: rgb(55, 65, 81);
+  border-color: rgb(75, 85, 99);
+}
+
+body.dark-mode #themeButton:hover {
+  background-color: rgb(75, 85, 99);
+}

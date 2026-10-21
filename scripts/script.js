@@ -2,6 +2,23 @@ const taskForm = document.getElementById("taskForm");
 const taskInput = document.getElementById("taskInput");
 const taskButton = document.getElementById("taskButton");
 const taskList = document.getElementById("taskList");
+const themeButton = document.getElementById("themeButton");
+
+// Listen for clicks on the theme button to toggle dark mode
+themeButton.addEventListener("click", function () {
+  // Add or remove the "dark-mode" class from the body
+  document.body.classList.toggle("dark-mode");
+
+  // Check whether the "dark-mode" class is present on the body
+  const isDarkMode = document.body.classList.contains("dark-mode");
+
+  // Update the button text based on the current theme
+  if (isDarkMode) {
+    themeButton.textContent = "☀️ Light Mode";
+  } else {
+    themeButton.textContent = "🌙 Dark Mode";
+  }
+});
 
 // prevent the page from reloading
 taskForm.addEventListener("submit", function (event) {
